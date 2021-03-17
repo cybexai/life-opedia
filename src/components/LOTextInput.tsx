@@ -5,5 +5,5 @@ type Props = {
     type: string;
 }
 
-export const TextInput = ({ placeholder, type, ...props } : Props) =>
+export const LOTextInput = ({ placeholder, type, ...props } : Props) =>
     <input className="form-control" type={type} placeholder={placeholder} {...props} />

@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
-import { CATextInput } from '../components';
+import { LOTextInput } from '../components';
 import { COLORS } from '../utilities';
 
 type Props = {
     
 }
  
-export const Signin: React.FC<Props> =()=> {
+export const SigninScreen: React.FC<Props> =()=> {
     return(
         <div className="container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
 
             <div className="card" >
                 <div className="card-body" style={{ textAlign: 'center' }}>
-                    <CATextInput type="text" placeholder="Test" />
+                    <LOTextInput type="text" placeholder="Test" />
                     {/* <Logo />
                     <h5 className="card-title" style={{ margin: 15 }}>Connexion</h5>
                     <h6 className="card-subtitle " style={{ margin: 15 }}>Utiliser votre compte Cybex.Ai</h6>
