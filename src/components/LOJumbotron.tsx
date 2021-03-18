@@ -1,12 +1,17 @@
-import React, { CSSProperties, HTMLAttributes } from 'react';
-import { COLORS } from '../utilities';
-
+import React, { HTMLAttributes } from 'react';
+import * as CSS from 'csstype';
 interface Props extends HTMLAttributes<HTMLDivElement> {
     headerText?: string,
-    footerText?: string
+    footerText?: string,    
+    footerTextColor?: string,    
 }
 
-export const LOJumbotron: React.FC<Props> = ({ headerText, footerText, ...props }) => {
+export const LOJumbotron: React.FC<Props> = ({ headerText, footerText, footerTextColor, ...props }) => {
+
+    const style: CSS.Properties = {
+        color: 'white'
+      };
+
     return (
         <div className="jumbotron" {...props}>
             <div className="card-title-transparent">
@@ -15,20 +20,8 @@ export const LOJumbotron: React.FC<Props> = ({ headerText, footerText, ...props 
             </div>
 
             <div className="card-footer-transparent">
-                <h5>{footerText || 'Footer Text'}</h5>
+                <h5 style={{color: footerTextColor || 'white'}}>{footerText || 'Footer Text'}</h5>
             </div>
         </div>
     )
-}
-
-const styles: { [key: string]: CSSProperties } = {
-    label: {
-        color: COLORS.white
-    },
-    input: {
-        borderRadius: 20,
-        background: 'rgba(194,194,194,0.2)',
-        borderWidth: 0,
-        color: COLORS.white
-    }
 }

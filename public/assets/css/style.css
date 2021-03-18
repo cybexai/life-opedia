@@ -179,3 +179,13 @@
     font-size: 12px;
     margin-top: 3px;
 }
+
+.card-body-actions {
+    display: flex;
+    justify-content: space-between;
+    float: right;
+}
+
+.card-body-actions a {
+ color: #FD6000;
+}
