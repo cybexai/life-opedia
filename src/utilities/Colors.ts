@@ -7,5 +7,8 @@ export const COLORS = {
     dark_gray: '#636A6C',
     light_black: '#020202',
     firebrick: '#cb3328',
-    darkslategray: '#3f4140'
+    darkslategray: '#3f4140',
+    facebook: '#4863AE',
+    linkedin: '#0083A8',
+    twitter: '#46C0FB'
 }
