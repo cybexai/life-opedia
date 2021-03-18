@@ -11,5 +11,6 @@ export const COLORS = {
     facebook: '#4863AE',
     linkedin: '#0083A8',
     twitter: '#46C0FB',
-    dimgray: '#706262'
+    dimgray: '#706262',
+    floralwhite: '#FBF9F4'
 }

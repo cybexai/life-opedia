@@ -21,10 +21,10 @@ export const LOArticleSection: React.FC<Props> = ({ headerText, footerText, ...p
             </div>
             <div className="row">
                 <div className="col">
-                    <LOArticleCard />
+                    <LOArticleCard headerText="Travel" />
                 </div>
                 <div className="col">
-                    <LOArticleCard />
+                    <LOArticleCard headerText="Unweaving the rainbow" footerText="Footer Text" />
                 </div>
             </div>
         </div>

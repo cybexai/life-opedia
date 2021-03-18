@@ -64,22 +64,22 @@ export const HomepageScreen: React.FC<Props> = () => {
 
                 <div className="row" style={{ padding: 20 }}>
                     <div className="col">
-                        <LOArticleMiniCard />
+                        <LOArticleMiniCard headerText="Travel" style={styles.miniCard} />
                     </div>
                     <div className="col">
-                        <LOArticleMiniCard />
+                        <LOArticleMiniCard headerText="Style" style={styles.miniCard} />
                     </div>
                     <div className="col">
-                        <LOArticleMiniCard />
+                        <LOArticleMiniCard headerText="Travel" style={styles.miniCard} />
                     </div>
                     <div className="col">
-                        <LOArticleMiniCard />
+                        <LOArticleMiniCard headerText="Aws" style={styles.miniCard} />
                     </div>
                 </div>
 
             </div>
 
-           <LOFooter />
+            <LOFooter />
 
         </>
     )
@@ -88,5 +88,9 @@ export const HomepageScreen: React.FC<Props> = () => {
 const styles: { [key: string]: CSSProperties } = {
     miniJumbo: {
         height: 200
+    },
+    miniCard: {
+        backgroundColor: COLORS.floralwhite,
+        borderStyle: 'none'
     }
 }
