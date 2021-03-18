@@ -1,40 +1,44 @@
 import React, { useEffect } from 'react';
-import { LOTextInput } from '../components';
+import { LOLargeButton, LONavBar, LOTextInput } from '../components';
 import { COLORS } from '../utilities';
 
 type Props = {
-    
+
 }
- 
-export const SigninScreen: React.FC<Props> =()=> {
-    return(
-        <div className="container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
 
-            <div className="card" >
-                <div className="card-body" style={{ textAlign: 'center' }}>
-                    <LOTextInput type="text" placeholder="Test" />
-                    {/* <Logo />
-                    <h5 className="card-title" style={{ margin: 15 }}>Connexion</h5>
-                    <h6 className="card-subtitle " style={{ margin: 15 }}>Utiliser votre compte Cybex.Ai</h6>
-                    <TextInput placeholder="Addresse e-mail" style={{ marginTop: 25 }} />
-                    <TextInput placeholder="Mot de passe" type='password' style={{ marginTop: 20, marginBottom: 10 }} />
+export const SigninScreen: React.FC<Props> = () => {
+    return (
+        <>
+            <LONavBar />
 
-                    <a style={{ fontSize: 13 }}>Mot de passe oublié ?</a>
+            <div className="signin-container">
 
-                    <div className="row" style={{ borderRadius: '5px', marginTop: 20, }}>
-                        <div className="col-sm-6">
-                            <NavLink style={{ textDecoration: 'none', color: COLORS.primary }} to='/signup'><b>Créer un compte</b></NavLink>
+                <div className="row">
+                    <div className="col login-left">
+                        <div className="d-flex">
+                            <h3 className="signin-left-title-login">LOGIN</h3>
+                            <h3 className="text-white ml-3">REGISTER</h3>
                         </div>
-                        <div className="col-sm-6">
-                            <button className="btn btn-sm"
-                                style={{ backgroundColor: COLORS.primary, color: 'rgb(255, 255, 255)' }}>Connexion</button>
-                        </div>
-                    </div> 
+                        <LOTextInput placeholder="USERNAME" type="text" />
 
-                <AuthFooter /> */}
+                        <label className="remember_me_label">
+                            <input type="checkbox" className="remember_me_checkbox" checked />Keep me Signed in
+                                <span className="checkmark"></span> </label>
+
+                        <LOLargeButton title="LOG IN" backgroundColor={COLORS.primary} borderRadius={20} />
+                        <hr />
+                        <a href="#" className="membership">Want to be a member</a>
+                    </div>
+
+                    <div className="col login-right">
+                        <h3 className="signin-right-title">LOGIN WITH</h3>
+                        <LOLargeButton showIcon title="FACEBOOK" icon="fab fa-facebook-square" backgroundColor={COLORS.facebook} />
+                        <LOLargeButton showIcon title="LINKEDIN" icon="fab fa-linkedin" backgroundColor={COLORS.linkedin} />
+                        <LOLargeButton showIcon title="TWITTER" icon="fab fa-twitter-square" backgroundColor={COLORS.twitter} />
+                    </div>
                 </div>
-            </div>
-        </div>
 
+            </div>
+        </>
     )
 }
