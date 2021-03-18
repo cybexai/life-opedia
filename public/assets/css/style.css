@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #FBF9F4;
 }
 
@@ -146,7 +146,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(36, 35, 35, 0.6);   
+    background-color: rgba(36, 35, 35, 0.6);
     border-radius: 2px;
     /* padding: 0px 20px 0px 20px; */
     margin: 10px;
@@ -170,7 +170,7 @@ body{
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: rgba(36, 35, 35, 0.6);        
+    background-color: rgba(36, 35, 35, 0.6);
     padding: 3px 15px 3px 15px;
     margin: 10px;
     border-radius: 2px;
@@ -189,7 +189,7 @@ body{
 }
 
 .card-body-actions a {
- color: #FD6000;
+    color: #FD6000;
 }
 
 .section-title-button {
@@ -203,7 +203,6 @@ body{
 
 .article-section {
     width: fit-content;
-    
     background: none;
 }
 
@@ -218,10 +217,40 @@ body{
     color: #FD6000;
 }
 
-.card{
+.card {
     margin-bottom: 20px;
 }
 
 .card-header {
     background-color: #FBF9F4;
+}
+
+.footer {
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
+    background-color: #4E443E;
+    justify-content: space-between;
+}
+
+.footer-center {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.footer-center a {
+   color: white;
+}
+
+.footer-right {
+    display: flex;
+    text-align: center;
+    flex-direction: row; 
+    
+}
+
+.footer-right a, .footer-right p {
+    color: #FD6000;
+    margin-left: 10px;
 }

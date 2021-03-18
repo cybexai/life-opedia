@@ -8,3 +8,4 @@ export * from './LOArticleSection';
 export * from './LOArticleMiniCard';
 export * from './LOArticleMostPopular';
 export * from './LOCardBodyActions';
+export * from './LOFooter';

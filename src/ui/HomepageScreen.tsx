@@ -2,7 +2,7 @@ import React, { CSSProperties, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
-import { LOArticleCard, LOArticleMiniCard, LOArticleMostPopular, LOArticleSection, LOJumbotron, LOLargeButton, LONavBar, LOTextInput } from '../components';
+import { LOArticleMiniCard, LOArticleMostPopular, LOArticleSection, LOFooter, LOJumbotron, LOLargeButton, LOLogo, LONavBar, LOTextInput } from '../components';
 import { signin } from '../redux/actions';
 import { COLORS } from '../utilities';
 
@@ -51,13 +51,35 @@ export const HomepageScreen: React.FC<Props> = () => {
 
                 </div>
                 <div className="col-lg-3">
-                    <h5 className="text-center">Suggested Articles</h5>
+                    <h5 className="text-center ">Suggested Articles</h5>
                     <LOArticleMiniCard />
                     <LOArticleMiniCard />
                     <LOArticleMostPopular />
                 </div>
             </div>
 
+            <div>
+
+                <h3 className="text-center">Editor's Picks</h3>
+
+                <div className="row" style={{ padding: 20 }}>
+                    <div className="col">
+                        <LOArticleMiniCard />
+                    </div>
+                    <div className="col">
+                        <LOArticleMiniCard />
+                    </div>
+                    <div className="col">
+                        <LOArticleMiniCard />
+                    </div>
+                    <div className="col">
+                        <LOArticleMiniCard />
+                    </div>
+                </div>
+
+            </div>
+
+           <LOFooter />
 
         </>
     )
