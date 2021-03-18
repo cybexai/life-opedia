@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { CSSProperties, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
@@ -25,19 +25,19 @@ export const HomepageScreen: React.FC<Props> = () => {
 
             <div className="row no-gutters">
                 <div className="col">
-                <LOJumbotron />
+                <LOJumbotron style={styles.miniJumbo} />
                 </div>
                 <div className="col">
-                <LOJumbotron />
+                <LOJumbotron style={styles.miniJumbo}  />
                 </div>
                 <div className="col">
-                <LOJumbotron />
+                <LOJumbotron style={styles.miniJumbo}  />
                 </div>
                 <div className="col">
-                <LOJumbotron />
+                <LOJumbotron style={styles.miniJumbo}  />
                 </div>
                 <div className="col">
-                <LOJumbotron />
+                <LOJumbotron style={styles.miniJumbo}  />
                 </div>
             </div>
 
@@ -49,4 +49,10 @@ export const HomepageScreen: React.FC<Props> = () => {
             </div>
         </>
     )
+}
+
+const styles: { [key: string]: CSSProperties } = {
+    miniJumbo: {
+        height: 200
+    }
 }
