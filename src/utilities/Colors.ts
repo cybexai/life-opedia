@@ -10,5 +10,6 @@ export const COLORS = {
     darkslategray: '#3f4140',
     facebook: '#4863AE',
     linkedin: '#0083A8',
-    twitter: '#46C0FB'
+    twitter: '#46C0FB',
+    dimgray: '#706262'
 }

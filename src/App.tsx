@@ -19,7 +19,7 @@ function App() {
             <LOTextInput placeholder="USERNAME" type="text" />
                         
             <label className="remember_me_label">
-              <input type="checkbox" className="remember_me_checkbox" checked /> Keep me Signed in
+              <input type="checkbox" className="remember_me_checkbox" checked />Keep me Signed in
               <span className="checkmark"></span> </label>
             
             <LOLoginButtonSocial title="LOG IN" backgroundColor={COLORS.primary} borderRadius={20} />

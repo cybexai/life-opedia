@@ -52,7 +52,6 @@
     -ms-user-select: none;
     user-select: none;
     color: white;
-    margin-left: 8px;
     margin-top: 25px;
   }
   
@@ -70,8 +69,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     background-color: #eee;
   }
   
@@ -99,8 +98,7 @@
   
   /* Style the checkmark/indicator */
   .remember_me_label .checkmark:after {
-    left: 9px;
-    top: 5px;
+    left: 6px;    
     width: 8px;
     height: 15px;
     border: solid white;
