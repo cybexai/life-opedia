@@ -17,13 +17,14 @@ function App() {
               <h3 style={{ color: COLORS.white, marginBottom: 20, marginLeft: 10 }}>REGISTER</h3>
             </div>
             <LOTextInput placeholder="USERNAME" type="text" />
-            <div>
-            <input type="checkbox" id="remember_me" />
-            <label>Keep me Signed in</label>
-            </div>
+                        
+            <label className="remember_me_label">
+              <input type="checkbox" className="remember_me_checkbox" checked /> Keep me Signed in
+              <span className="checkmark"></span> </label>
+            
             <LOLoginButtonSocial title="LOG IN" backgroundColor={COLORS.primary} borderRadius={20} />
             <hr />
-            <a href="#" className="member_ship">Want to be a member</a>
+            <a href="#" className="membership">Want to be a member</a>
           </div>
 
           <div className="col login-right">
