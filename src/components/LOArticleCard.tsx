@@ -11,7 +11,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 export const LOArticleCard: React.FC<Props> = ({ headerText, footerText, ...props }) => {
    
     return (
-        <div className="card" style={{ width: '25rem' }}>
+        <div className="card">
             <div style={{ position: 'relative' }}>
                 <div className="card-title-transparent">
                     <h5>{headerText || 'Header Text'}</h5>
