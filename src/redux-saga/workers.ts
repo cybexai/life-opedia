@@ -9,7 +9,7 @@ export function* signinWorker(payload: any) {
         const response: AxiosResponse = yield call(AdminApi.signin, payload.user);
  
         if (response.status === 200) {
-            payload.history.push('/')
+            payload.history.push('/homepage')
         } else {
             alert('Paramètres de connexion incorrects')
         }

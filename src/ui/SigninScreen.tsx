@@ -55,7 +55,7 @@ export const SigninScreen: React.FC<Props> = () => {
                                 <span className="checkmark"></span> </label>
 
                         <LOLargeButton type="submit" title="LOG IN" backgroundColor={COLORS.primary} borderRadius={20} />
-                        <hr />
+                        <hr className="my-4"/>
                         <a href="#" className="membership">Want to be a member</a>
                     </div>
 

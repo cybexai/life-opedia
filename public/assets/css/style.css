@@ -1,59 +1,59 @@
 .navbar {
     justify-content: space-between;
-  }
-  
-  .signin-container {
+}
+
+.signin-container {
     background-image: url("../images/bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    box-shadow:inset 0 0 0 2000px rgba(36, 35, 35, 0.9);    
+    box-shadow: inset 0 0 0 2000px rgba(36, 35, 35, 0.9);
     width: 100%;
     height: 100vh;
-  }
+}
 
-  .signin-left-title-login {
+.signin-left-title-login {
     color: #FD6000;
     border-bottom-color: #FD6000;
     margin-bottom: 20px;
     border-bottom-style: solid;
-  }
+}
 
-  .signin-right-title {
-      margin-bottom: 20px;
-      font-weight: lighter;
-      color: white;
-  }
-  
-  .btn-social {
-      color: white;
-      margin-top: 15px;
-      /* padding: 8px 100px 8px 100px; */
-  }
+.signin-right-title {
+    margin-bottom: 20px;
+    font-weight: lighter;
+    color: white;
+}
 
-  .login-left {
+.btn-social {
+    color: white;
+    margin-top: 15px;
+    /* padding: 8px 100px 8px 100px; */
+}
+
+.login-left {
     display: flex;
     flex-direction: column;
     padding: 100px;
-    
-  }
+}
 
-  .login-right {
+.login-right {
     display: flex;
     flex-direction: column;
     padding: 100px;
     text-align: center;
-  }
+}
 
-  .membership {
-      text-align: center;
-  }
-  
-  .remember_me_checkbox {
-    width: 20px; 
+.membership {
+    text-align: center;
+}
+
+.remember_me_checkbox {
+    width: 20px;
     height: 20px;
-  }
- 
-  /* The container */
+}
+
+/* The container */
+
 .remember_me_label {
     display: block;
     position: relative;
@@ -66,52 +66,59 @@
     user-select: none;
     color: white;
     margin-top: 25px;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .remember_me_label input {
+}
+
+/* Hide the browser's default checkbox */
+
+.remember_me_label input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
+}
+
+/* Create a custom checkbox */
+
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
     height: 20px;
     width: 20px;
     background-color: #eee;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .remember_me_label:hover input ~ .checkmark {
+}
+
+/* On mouse-over, add a grey background color */
+
+.remember_me_label:hover input~.checkmark {
     background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .remember_me_label input:checked ~ .checkmark {
+}
+
+/* When the checkbox is checked, add a blue background */
+
+.remember_me_label input:checked~.checkmark {
     background-color: #FD6000;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .remember_me_label input:checked ~ .checkmark:after {
+}
+
+/* Show the checkmark when checked */
+
+.remember_me_label input:checked~.checkmark:after {
     display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .remember_me_label .checkmark:after {
-    left: 6px;    
+}
+
+/* Style the checkmark/indicator */
+
+.remember_me_label .checkmark:after {
+    left: 6px;
     width: 8px;
     height: 15px;
     border: solid white;
@@ -119,6 +126,52 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
 
-  
+.jumbotron {
+    background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/shopping-bag-full-of-fresh-vegetables-and-fruits-royalty-free-image-1128687123-1564523576.jpg?crop=1.00xw:0.751xh;0,0.212xh&resize=980:*");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px;
+    position: relative;
+    height: 300px;
+    margin-bottom: 0px;
+}
+
+.card-title-transparent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(36, 35, 35, 0.6);    
+    text-align: center;
+    border-radius: 2px;
+    /* padding: 0px 20px 0px 20px; */
+    margin: 10px;
+}
+
+.card-title-transparent h5 {
+    color: white;
+    padding: 0px 10px 0px 10px;
+}
+
+.card-title-transparent hr {
+    background-color: #E0DD0D;
+    margin: 0px;
+    margin-bottom: 4px;
+    height: 2px;
+}
+
+.card-footer-transparent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(36, 35, 35, 0.6);    
+    text-align: center;
+    padding: 3px 15px 3px 15px;
+    margin: 10px;
+    border-radius: 2px;
+}
+
+.card-footer-transparent h5 {
+    color: white;
+}

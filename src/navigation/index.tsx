@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { SigninScreen } from '../ui';
+import * as UI from '../ui';
 
 
 export const index: React.FC = () => {
@@ -9,8 +9,9 @@ export const index: React.FC = () => {
         <Router>
 
             <Switch>
-                <Route path='/' exact component={SigninScreen} />
-                <Route path='/signin' component={SigninScreen} />
+                <Route path='/' exact component={UI.SigninScreen} />
+                <Route path='/signin' component={UI.SigninScreen} />
+                <Route path='/homepage' component={UI.HomepageScreen} />
             </Switch>
 
         </Router>
