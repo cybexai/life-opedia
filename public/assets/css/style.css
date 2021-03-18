@@ -1,3 +1,7 @@
+body{
+    background-color: #FBF9F4;
+}
+
 .navbar {
     justify-content: space-between;
 }
@@ -216,4 +220,8 @@
 
 .card{
     margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #FBF9F4;
 }

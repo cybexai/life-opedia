@@ -6,3 +6,5 @@ export * from './LOJumbotron';
 export * from './LOArticleCard';
 export * from './LOArticleSection';
 export * from './LOArticleMiniCard';
+export * from './LOArticleMostPopular';
+export * from './LOCardBodyActions';

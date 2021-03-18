@@ -1,4 +1,5 @@
 import React, { HTMLAttributes } from 'react';
+import { LOCardBodyActions } from './LOCardBodyActions';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     headerText?: string,
@@ -25,11 +26,7 @@ export const LOArticleCard: React.FC<Props> = ({ headerText, footerText, ...prop
             </div>
             <div className="card-body">
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div className="card-body-actions">
-                    <a className="mr-3"><i className="fa fa-eye"></i> 17</a>
-                    <a className="mr-3"><i className="fa fa-comment-alt"></i> 1</a>
-                    <a href="#">28 mins read</a>
-                </div>
+                <LOCardBodyActions showDownload={false} showReadTime={true} />
             </div>
         </div>
     )

@@ -2,7 +2,7 @@ import React, { CSSProperties, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
-import { LOArticleCard, LOArticleMiniCard, LOArticleSection, LOJumbotron, LOLargeButton, LONavBar, LOTextInput } from '../components';
+import { LOArticleCard, LOArticleMiniCard, LOArticleMostPopular, LOArticleSection, LOJumbotron, LOLargeButton, LONavBar, LOTextInput } from '../components';
 import { signin } from '../redux/actions';
 import { COLORS } from '../utilities';
 
@@ -54,6 +54,7 @@ export const HomepageScreen: React.FC<Props> = () => {
                     <h5 className="text-center">Suggested Articles</h5>
                     <LOArticleMiniCard />
                     <LOArticleMiniCard />
+                    <LOArticleMostPopular />
                 </div>
             </div>
 
