@@ -2,7 +2,7 @@ import React, { CSSProperties, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
-import { LOArticleCard, LOJumbotron, LOLargeButton, LONavBar, LOTextInput } from '../components';
+import { LOArticleCard, LOArticleSection, LOJumbotron, LOLargeButton, LONavBar, LOTextInput } from '../components';
 import { signin } from '../redux/actions';
 import { COLORS } from '../utilities';
 
@@ -44,9 +44,15 @@ export const HomepageScreen: React.FC<Props> = () => {
                 </div>
             </div>
 
-            <div className="container">
-                {/* <LOJumbotron style={styles.miniJumbo} /> */}
-            <LOArticleCard />
+            <div className="row" style={{padding: 20}}>
+                <div className="col-lg-8">
+                <LOArticleSection />
+                <LOArticleSection />
+
+                </div>
+                <div className="col-lg-4">
+
+                </div>
             </div>
 
 

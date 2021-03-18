@@ -18,7 +18,7 @@ export const LOArticleCard: React.FC<Props> = ({ headerText, footerText, ...prop
                     <hr />
                 </div>
 
-                <div className="card-footer-transparent">
+                <div className="card-footer-transparent" style={{width:'95%'}}>
                     <h5>{footerText || 'Footer Text'}</h5>
                 </div>
                 <img className="card-img-top" src={"https://gsatc.org/wp-content/uploads/2021/01/0132_637324252136928732.jpg"} alt="Card image cap" style={{ height: 200 }} />
