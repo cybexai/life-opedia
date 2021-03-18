@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import './index.css';
-import App from './App';
+import { index as Navigation } from './navigation';
 import reportWebVitals from './reportWebVitals';
 import { store } from './redux';
 
 const reduxStore = store();
- 
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={reduxStore}>
       <Suspense fallback={null}>
-        <App />
+        <Navigation />
       </Suspense>
     </Provider>
   </React.StrictMode>,

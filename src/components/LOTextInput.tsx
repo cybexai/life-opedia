@@ -1,21 +1,20 @@
-import React, { CSSProperties, FunctionComponent } from 'react';
+import React, { CSSProperties, InputHTMLAttributes } from 'react';
 import { COLORS } from '../utilities';
 
-type Props = {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
     placeholder?: string;
-    type: string;
 }
 
-export const LOTextInput = ({ placeholder, type, ...props }: Props) => {
+export const LOTextInput: React.FC<Props> = ({ placeholder, ...props }) => {
     return (
         <>
             <label style={styles.label}>{placeholder}</label>
-            <input className="form-control" style={styles.input} type={type} {...props} />
+            <input className="form-control" style={styles.input} {...props} />
         </>
     )
 }
 
-const styles: {[key: string]: CSSProperties} = {
+const styles: { [key: string]: CSSProperties } = {
     label: {
         color: COLORS.white
     },
@@ -25,4 +24,4 @@ const styles: {[key: string]: CSSProperties} = {
         borderWidth: 0,
         color: COLORS.white
     }
-}    
+}

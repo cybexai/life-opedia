@@ -1,9 +1,9 @@
 import * as constants from './constants';
 
-export function signin(user: any) {
+export function signin(user: any, history: any) {
     return {
         type: constants.SIGNIN,
-        user
+        user, history
     };
 }
 

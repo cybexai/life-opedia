@@ -7,7 +7,7 @@ import { ACTIONS } from '../redux';
 export function* signinWorker(payload: any) {
     try {
         const response: AxiosResponse = yield call(AdminApi.signin, payload.user);
-
+ 
         if (response.status === 200) {
             payload.history.push('/')
         } else {
