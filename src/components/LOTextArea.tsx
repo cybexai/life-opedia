@@ -1,21 +1,21 @@
 import React, { InputHTMLAttributes } from 'react';
 import { COLORS } from '../utilities';
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
+interface Props extends InputHTMLAttributes<HTMLTextAreaElement> {
     placeholder?: string;
     labelColor?: string;
     bgColor?: string;
 }
 
-export const LOTextInput: React.FC<Props> = ({ labelColor, bgColor, placeholder, ...props }) => {
+export const LOTextArea: React.FC<Props> = ({ labelColor, bgColor, placeholder, ...props }) => {
 
     const styles = {
         label: {
             color: labelColor || COLORS.white
         },
         input: {
-            borderRadius: 20,
-            background: bgColor || 'rgba(194,194,194,0.2)',
+            borderRadius: 5,
+            background: bgColor || 'transparent',
             borderWidth: 0,
             color: labelColor || COLORS.white
         }
@@ -24,7 +24,7 @@ export const LOTextInput: React.FC<Props> = ({ labelColor, bgColor, placeholder,
     return (
         <>
             <label style={styles.label}>{placeholder}</label>
-            <input className="form-control" style={styles.input} {...props} />
+            <textarea className="form-control" style={styles.input} {...props} />
         </>
     )
 }

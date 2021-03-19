@@ -30,7 +30,7 @@ body {
 
 .btn-social {
     color: white;
-    margin-top: 15px;
+    margin-top: 15px;    
     /* padding: 8px 100px 8px 100px; */
 }
 
@@ -221,7 +221,7 @@ body {
     margin-bottom: 20px;
 }
 
-.card-header {
+.card-header .listing {
     background-color: #FBF9F4;
 }
 
@@ -286,6 +286,7 @@ body {
     border-radius: 50px;
     margin-top: 20px;
     margin-right: 5px;
+    font-weight: bold;
 }
 
 .input-group {
@@ -311,4 +312,25 @@ body {
     margin-top: 70px;
     width: 70%;
     border-radius: 5px;
+}
+
+.tag-container {
+    border-color: #FD6000;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.tag-container p {
+    margin-top: 10px;    
+}
+
+.tag-container img {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 5px;
 }

@@ -13,6 +13,7 @@ export const index: React.FC = () => {
                 <Route path='/signin' component={UI.SigninScreen} />
                 <Route path='/homepage' component={UI.HomepageScreen} />
                 <Route path='/article/new' component={UI.NewArticleScreen} />
+                <Route path='/article/detail' component={UI.ArticleDetailScreen} />
             </Switch>
 
         </Router>
