@@ -4,28 +4,28 @@ import { LOArticleCard } from './LOArticleCard';
 interface Props extends HTMLAttributes<HTMLDivElement> {
     headerText?: string,
     footerText?: string,
-    image?: string,
-    contenu?: string,
-    titre? : string
+    articles: any,
+    categorie: string,
 }
 
-export const LOArticleSection: React.FC<Props> = ({ headerText, footerText, ...props }) => {
-   
+export const LOArticleSection: React.FC<Props> = ({ headerText, footerText, articles, categorie, ...props }) => {
+
     return (
-        <div style={{padding: 10}}>
+        <div style={{ padding: 10 }}>
             <div className="article-section">
-            <button className="section-title-button">
-                <h5>Design</h5>
-            </button>
-            <hr />
+                <button className="section-title-button">
+                    <h5>{categorie}</h5>
+                </button>
+                <hr />
             </div>
             <div className="row">
-                <div className="col">
-                    <LOArticleCard headerText="Travel" />
-                </div>
-                <div className="col">
-                    <LOArticleCard headerText="Unweaving the rainbow" footerText="Footer Text" />
-                </div>
+                {articles.map((article: any) => {
+                    if (categorie === article._categorie.nom) {
+                        return <div className="col">
+                            <LOArticleCard article={article} headerText="Travel" />
+                        </div>
+                    }
+                })}
             </div>
         </div>
     )

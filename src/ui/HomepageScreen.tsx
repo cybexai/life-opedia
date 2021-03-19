@@ -1,53 +1,54 @@
-import React, { CSSProperties, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router';
+import React, { CSSProperties, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { LOArticleMiniCard, LOArticleMostPopular, LOArticleSection, LOFooter, LOJumbotron, LOLargeButton, LOLogo, LONavBar, LOTextInput } from '../components';
-import { signin } from '../redux/actions';
+import { LOArticleMiniCard, LOArticleMostPopular, LOArticleSection, LOFooter, LOJumbotron, LONavBar } from '../components';
+import { getArticles } from '../redux/actions';
 import { COLORS } from '../utilities';
-
-type Props = {
+import { RootState } from '../redux';
+interface Props {
 
 }
 
 export const HomepageScreen: React.FC<Props> = () => {
 
-    const [nom, setNom] = useState('');
-
     const dispatch = useDispatch();
-    const history = useHistory();
+    const articles = useSelector((state: RootState) => state.appState.articles);
+
+    let categories: any = [];
+
+    if (articles.length !== 0) {
+
+        let tempCategories: any = [];
+
+        articles.forEach((article: any) => {
+            tempCategories.push(article._categorie.nom)
+        });
+
+        categories = Array.from(new Set(tempCategories))
+    }
+
+    useEffect(() => {
+        dispatch(getArticles());
+    }, []);
 
     return (
         <>
             <LONavBar />
-
+            {console.log(categories)}
             <LOJumbotron
                 headerText="Food"
                 footerText="A darkling plain"
                 footerTextColor={COLORS.primary} />
 
             <div className="row no-gutters w-100">
-                <div className="col">
+                {[1, 2, 3, 4, 5].map((data: any) => <div className="col">
                     <LOJumbotron style={styles.miniJumbo} headerText='Header Text' footerText='Footer Text' />
-                </div>
-                <div className="col">
-                    <LOJumbotron style={styles.miniJumbo} headerText='Header Text' footerText='Footer Text' />
-                </div>
-                <div className="col">
-                    <LOJumbotron style={styles.miniJumbo} headerText='Header Text' footerText='Footer Text' />
-                </div>
-                <div className="col">
-                    <LOJumbotron style={styles.miniJumbo} headerText='Header Text' footerText='Footer Text' />
-                </div>
-                <div className="col">
-                    <LOJumbotron style={styles.miniJumbo} headerText='Header Text' footerText='Footer Text' />
-                </div>
+                </div>)}
             </div>
 
             <div className="row w-100" style={{ padding: 20 }}>
                 <div className="col-lg-9">
-                    <LOArticleSection />
-                    <LOArticleSection />
+                    {categories.map((categorie: any) => <LOArticleSection articles={articles} categorie={categorie} />)}
 
                 </div>
                 <div className="col-lg-3">
@@ -59,24 +60,13 @@ export const HomepageScreen: React.FC<Props> = () => {
             </div>
 
             <div>
-
                 <h3 className="text-center">Editor's Picks</h3>
 
                 <div className="row w-100" style={{ padding: 20 }}>
-                    <div className="col">
+                    {[1, 2, 3, 4].map((data: any) => <div className="col">
                         <LOArticleMiniCard headerText="Travel" style={styles.miniCard} />
-                    </div>
-                    <div className="col">
-                        <LOArticleMiniCard headerText="Style" style={styles.miniCard} />
-                    </div>
-                    <div className="col">
-                        <LOArticleMiniCard headerText="Travel" style={styles.miniCard} />
-                    </div>
-                    <div className="col">
-                        <LOArticleMiniCard headerText="Aws" style={styles.miniCard} />
-                    </div>
+                    </div>)}
                 </div>
-
             </div>
 
             <LOFooter />
