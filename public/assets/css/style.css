@@ -287,3 +287,12 @@ body {
     margin-top: 20px;
     margin-right: 5px;
 }
+
+.input-group-text {
+    background-color: #FD6000;
+    border-style: none;
+}
+
+.input-group .form-control {
+    border-style: none; 
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
-import { LOButton, LOFooter, LOLargeButton, LONavBar, LOTextInput } from '../components';
+import { LOButton, LOFooter, LOLargeButton, LONavBar, LOTextInput, LOTextInputWithIcon } from '../components';
 import { saveArticle, signin } from '../redux/actions';
 import { COLORS } from '../utilities';
 
@@ -69,6 +69,7 @@ export const NewArticleScreen: React.FC<Props> = () => {
                     </div>
                     <div className="col-lg-4">
                     <h1>Right</h1>
+                    <LOTextInputWithIcon icon="fa fa-tag" placeholder="Article Tags" />
                     </div>
                 </div>
 
