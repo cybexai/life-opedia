@@ -300,3 +300,15 @@ body {
 .input-group .form-control {
     border-style: none; 
 }
+
+.image-dropzone {
+    border-style: dashed;
+    border-width: 2px;
+    border-color: #c2c2c2;
+    background-color: #F8F8F8;
+    text-align: center;
+    padding: 100px 0px 100px 0px;
+    margin-top: 70px;
+    width: 70%;
+    border-radius: 5px;
+}

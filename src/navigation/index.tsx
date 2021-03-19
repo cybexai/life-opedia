@@ -11,7 +11,8 @@ export const index: React.FC = () => {
             <Switch>
                 <Route path='/' exact component={UI.SigninScreen} />
                 <Route path='/signin' component={UI.SigninScreen} />
-                <Route path='/homepage' component={UI.NewArticleScreen} />
+                <Route path='/homepage' component={UI.HomepageScreen} />
+                <Route path='/article/new' component={UI.NewArticleScreen} />
             </Switch>
 
         </Router>

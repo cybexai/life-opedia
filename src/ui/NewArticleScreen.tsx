@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
+import ReactDropzone from "react-dropzone";
 
 import { LOButton, LODropdownWithIcon, LOFooter, LOLargeButton, LONavBar, LOTextInput, LOTextInputWithIcon } from '../components';
 import { saveArticle, signin } from '../redux/actions';
@@ -67,7 +68,19 @@ export const NewArticleScreen: React.FC<Props> = () => {
 
                     </div>
                     <div className="col-lg-4">
-                    
+                        <ReactDropzone
+                            accept="image/*"
+                            onDrop={file => console.log(file)}
+                        >
+                            {({ getRootProps, getInputProps }) => (
+                                <section className="image-dropzone">
+                                    <div {...getRootProps()}>
+                                        <input {...getInputProps()} />
+                                        <h6>Add Featured Image</h6>
+                                    </div>
+                                </section>
+                            )}
+                        </ReactDropzone>
                         <LODropdownWithIcon icon="fa fa-list-alt" placeholder="Select Category" />
                         <LOTextInputWithIcon icon="fa fa-tag" placeholder="Article Tags" />
                         <small>Seperate tags with a comma</small>
