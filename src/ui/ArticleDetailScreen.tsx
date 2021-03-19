@@ -1,9 +1,9 @@
-import React, { CSSProperties, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router';
+import { AxiosResponse } from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
+import { getArticleById } from '../api';
 
-import { LOArticleMiniCard, LOArticleMostPopular, LOArticleSection, LOButton, LOFooter, LOJumbotron, LOLargeButton, LOLogo, LONavBar, LOTextArea, LOTextInput } from '../components';
-import { signin } from '../redux/actions';
+import { LOArticleMiniCard, LOArticleMostPopular, LOButton, LOFooter, LOJumbotron, LONavBar, LOTextArea, LOTextInput } from '../components';
 import { COLORS } from '../utilities';
 
 type Props = {
@@ -12,20 +12,25 @@ type Props = {
 
 export const ArticleDetailScreen: React.FC<Props> = () => {
 
-    const [nom, setNom] = useState('');
+    const [article, setArticle] = useState<any>([]);
 
-    const dispatch = useDispatch();
-    const history = useHistory();
+    const { id } = useParams<{ id: string }>();
+
+    useEffect(() => {
+        getArticleById(id).then((response: AxiosResponse) => {
+            setArticle(response.data)
+        })
+    }, []);
 
     return (
         <>
             <LONavBar />
 
-            <div className="container">
+            {article.length !== 0 ? <div className="container">
                 <div className="row" style={{ padding: 20 }}>
                     <div className="col-lg-9">
-                        <h5 className="text-primary-color">FOOD</h5>
-                        <h4>A darkling plan</h4>
+                        <h5 className="text-primary-color">{article._categorie.nom}</h5>
+                        <h4>{article.titre}</h4>
                         <h6 className="text-primary-color">By Alexandru Bangau</h6>
                         <div style={{ justifyContent: 'space-between', display: 'flex' }}>
                             <div>
@@ -37,8 +42,8 @@ export const ArticleDetailScreen: React.FC<Props> = () => {
                                 <i className="fa fa-bookmark"></i>
                             </div>
                         </div>
-                        <LOJumbotron />
-                        <p style={{ marginTop: 10 }}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed porro quam ipsam perferendis, omnis architecto fugit alias beatae suscipit odit animi laboriosam, dolorem ipsa autem delectus quos tempora rerum et.</p>
+                        <LOJumbotron style={{backgroundImage:`url(${article.image})`}} />
+                        <p style={{ marginTop: 10 }}>{article.contenu}</p>
 
                         <div className="tag-container">
                             <p>Tags: historical fiction, food.</p>
@@ -65,7 +70,7 @@ export const ArticleDetailScreen: React.FC<Props> = () => {
                                     <small>JUNE 07 2020</small>
                                 </li>
 
-                                <div style={{padding: 10}}>
+                                <div style={{ padding: 10 }}>
                                     <LOTextInput placeholder="Name" type="text" labelColor={COLORS.black} bgColor="rgba(253,96,0,0.2)" />
                                     <LOTextArea placeholder="Comment" labelTop={true} labelColor={COLORS.black} bgColor="rgba(253,96,0,0.2)" />
 
@@ -83,20 +88,10 @@ export const ArticleDetailScreen: React.FC<Props> = () => {
                         <LOArticleMostPopular showDownload={false} />
                     </div>
                 </div>
-            </div>
+            </div> : null }
 
             <LOFooter />
 
         </>
     )
-}
-
-const styles: { [key: string]: CSSProperties } = {
-    miniJumbo: {
-        height: 200
-    },
-    miniCard: {
-        backgroundColor: COLORS.floralwhite,
-        borderStyle: 'none'
-    }
 }

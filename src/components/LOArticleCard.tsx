@@ -1,4 +1,6 @@
 import React, { HTMLAttributes } from 'react';
+import { Link } from 'react-router-dom';
+import { COLORS } from '../utilities';
 import { LOCardBodyActions } from './LOCardBodyActions';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -9,8 +11,15 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 export const LOArticleCard: React.FC<Props> = ({ headerText, footerText, article, ...props }) => {
 
+    const styles = {
+        link: {
+            textDecoration:'none', 
+            color:COLORS.black
+        }
+    }
+
     return (
-        <div className="card">
+        <Link to={`/article/detail/${article.id}`} className="card" style={styles.link}>
             <div style={{ position: 'relative' }}>
                 <div className="card-title-transparent" style={{ width: article.titre.length < 12 ? 'auto' : '95%' }}>
                     <h5>{article.titre || 'Header Text'}</h5>
@@ -26,6 +35,6 @@ export const LOArticleCard: React.FC<Props> = ({ headerText, footerText, article
                 <p className="card-text">{article.contenu}</p>
                 <LOCardBodyActions showDownload={false} showReadTime={true} />
             </div>
-        </div>
+        </Link>
     )
 }
