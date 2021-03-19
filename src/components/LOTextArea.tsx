@@ -5,9 +5,10 @@ interface Props extends InputHTMLAttributes<HTMLTextAreaElement> {
     placeholder?: string;
     labelColor?: string;
     bgColor?: string;
+    labelTop?: boolean;
 }
 
-export const LOTextArea: React.FC<Props> = ({ labelColor, bgColor, placeholder, ...props }) => {
+export const LOTextArea: React.FC<Props> = ({ labelColor, bgColor, placeholder, labelTop, ...props }) => {
 
     const styles = {
         label: {
@@ -23,8 +24,8 @@ export const LOTextArea: React.FC<Props> = ({ labelColor, bgColor, placeholder, 
 
     return (
         <>
-            <label style={styles.label}>{placeholder}</label>
-            <textarea className="form-control" style={styles.input} {...props} />
+            {labelTop && <label style={styles.label}>{placeholder}</label>}
+            <textarea className="form-control" placeholder={!labelTop ? placeholder : ''} style={styles.input} {...props} />
         </>
     )
 }

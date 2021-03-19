@@ -14,14 +14,14 @@ export const LOJumbotron: React.FC<Props> = ({ headerText, footerText, footerTex
 
     return (
         <div className="jumbotron" {...props}>
-            <div className="card-title-transparent">
+            {headerText && <div className="card-title-transparent">
                 <h5>{headerText || 'Header Text'}</h5>
                 <hr />
-            </div>
+            </div>}
 
-            <div className="card-footer-transparent">
+            {footerText && <div className="card-footer-transparent">
                 <h5 style={{color: footerTextColor || 'white'}}>{footerText || 'Footer Text'}</h5>
-            </div>
+            </div>}
         </div>
     )
 }

@@ -14,7 +14,6 @@ export const LOTextInput: React.FC<Props> = ({ labelColor, bgColor, placeholder,
             color: labelColor || COLORS.white
         },
         input: {
-            borderRadius: 20,
             background: bgColor || 'rgba(194,194,194,0.2)',
             borderWidth: 0,
             color: labelColor || COLORS.white
@@ -22,9 +21,9 @@ export const LOTextInput: React.FC<Props> = ({ labelColor, bgColor, placeholder,
     }
 
     return (
-        <>
+        <div className="form-group">
             <label style={styles.label}>{placeholder}</label>
-            <input className="form-control" style={styles.input} {...props} />
-        </>
+            <input className="form-control rounded-pill" style={styles.input} {...props} />
+        </div>
     )
 }

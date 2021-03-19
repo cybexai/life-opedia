@@ -5,10 +5,11 @@ import { LOCardBodyActions } from './LOCardBodyActions';
 interface Props extends HTMLAttributes<HTMLDivElement> {
     image?: string,
     contenu?: string,
-    titre?: string
+    titre?: string,
+    showDownload: boolean
 }
 
-export const LOArticleMostPopular: React.FC<Props> = ({ ...props }) => {
+export const LOArticleMostPopular: React.FC<Props> = ({ showDownload,...props }) => {
 
     return (
         <div className="card">
@@ -18,19 +19,19 @@ export const LOArticleMostPopular: React.FC<Props> = ({ ...props }) => {
             <ul className="list-group list-group-flush">
                 <li className="list-group-item">A darkling plain
                 <br />
-                    <LOCardBodyActions showDownload={true} showReadTime={false} />
+                    <LOCardBodyActions showDownload={showDownload} showReadTime={false} />
                 </li>
                 <li className="list-group-item">The torment of others
                 <br />
-                    <LOCardBodyActions showDownload={true} showReadTime={false} />
+                    <LOCardBodyActions showDownload={showDownload} showReadTime={false} />
                 </li>
                 <li className="list-group-item">An evil cradling
                 <br />
-                    <LOCardBodyActions showDownload={true} showReadTime={false} />
+                    <LOCardBodyActions showDownload={showDownload} showReadTime={false} />
                 </li>
                 <li className="list-group-item">Blue remembered earth
                 <br />
-                    <LOCardBodyActions showDownload={true} showReadTime={false} />
+                    <LOCardBodyActions showDownload={showDownload} showReadTime={false} />
                 </li>
             </ul>
         </div>

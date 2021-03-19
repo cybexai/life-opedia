@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import ReactDropzone from "react-dropzone";
 
-import { LOButton, LODropdownWithIcon, LOFooter, LOLargeButton, LONavBar, LOTextInput, LOTextInputWithIcon } from '../components';
+import { LOButton, LODropdownWithIcon, LOFooter, LOLargeButton, LONavBar, LOTextArea, LOTextInput, LOTextInputWithIcon } from '../components';
 import { saveArticle, signin } from '../redux/actions';
 import { COLORS } from '../utilities';
 
@@ -47,11 +47,12 @@ export const NewArticleScreen: React.FC<Props> = () => {
         <>
             <LONavBar />
 
-            <div className="container" style={{ padding: 20 }}>
+            <div className="container mx-5 px-3 authenticate py-5" style={{ padding: 20 }}>
 
                 <div className="row">
                     <div className="col-lg-8">
-                        <textarea className="contenu" placeholder="Title" />
+
+                        <LOTextArea placeholder="Title" labelColor={COLORS.black} />
 
                         <div className="contentu-container">
 
@@ -59,7 +60,7 @@ export const NewArticleScreen: React.FC<Props> = () => {
                                 <p>Text</p>
                             </div>
 
-                            <textarea className="contenu" placeholder="Tell your story" />
+                            <LOTextArea placeholder="Tell your story" labelColor={COLORS.black} />
 
                         </div>
 

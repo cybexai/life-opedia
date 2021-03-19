@@ -1,12 +1,12 @@
-import React, { CSSProperties, FunctionComponent } from 'react';
+import React, { CSSProperties, HTMLAttributes } from 'react';
 import { COLORS } from '../utilities';
 
-type Props = {
+interface Props extends HTMLAttributes<HTMLHeadingElement> {
    
 }
 
-export const LOLogo = () =>
-    <h3 style={styles.logo}>LifeOpedia!</h3>
+export const LOLogo = ({...props}: Props) =>
+    <h3 style={styles.logo} {...props}>LifeOpedia!</h3>
 
 
 const styles: {[key: string]: CSSProperties} = {

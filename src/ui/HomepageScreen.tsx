@@ -26,25 +26,25 @@ export const HomepageScreen: React.FC<Props> = () => {
                 footerText="A darkling plain"
                 footerTextColor={COLORS.primary} />
 
-            <div className="row no-gutters">
+            <div className="row no-gutters w-100">
                 <div className="col">
-                    <LOJumbotron style={styles.miniJumbo} />
+                    <LOJumbotron style={styles.miniJumbo} headerText='Header Text' footerText='Footer Text' />
                 </div>
                 <div className="col">
-                    <LOJumbotron style={styles.miniJumbo} />
+                    <LOJumbotron style={styles.miniJumbo} headerText='Header Text' footerText='Footer Text' />
                 </div>
                 <div className="col">
-                    <LOJumbotron style={styles.miniJumbo} />
+                    <LOJumbotron style={styles.miniJumbo} headerText='Header Text' footerText='Footer Text' />
                 </div>
                 <div className="col">
-                    <LOJumbotron style={styles.miniJumbo} />
+                    <LOJumbotron style={styles.miniJumbo} headerText='Header Text' footerText='Footer Text' />
                 </div>
                 <div className="col">
-                    <LOJumbotron style={styles.miniJumbo} />
+                    <LOJumbotron style={styles.miniJumbo} headerText='Header Text' footerText='Footer Text' />
                 </div>
             </div>
 
-            <div className="row" style={{ padding: 20 }}>
+            <div className="row w-100" style={{ padding: 20 }}>
                 <div className="col-lg-9">
                     <LOArticleSection />
                     <LOArticleSection />
@@ -54,7 +54,7 @@ export const HomepageScreen: React.FC<Props> = () => {
                     <h5 className="text-center ">Suggested Articles</h5>
                     <LOArticleMiniCard />
                     <LOArticleMiniCard />
-                    <LOArticleMostPopular />
+                    <LOArticleMostPopular showDownload />
                 </div>
             </div>
 
@@ -62,7 +62,7 @@ export const HomepageScreen: React.FC<Props> = () => {
 
                 <h3 className="text-center">Editor's Picks</h3>
 
-                <div className="row" style={{ padding: 20 }}>
+                <div className="row w-100" style={{ padding: 20 }}>
                     <div className="col">
                         <LOArticleMiniCard headerText="Travel" style={styles.miniCard} />
                     </div>

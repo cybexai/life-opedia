@@ -23,24 +23,21 @@ export const ArticleDetailScreen: React.FC<Props> = () => {
 
             <div className="container">
                 <div className="row" style={{ padding: 20 }}>
-                    <div className="col-lg-8">
-                        <h5>FOOD</h5>
+                    <div className="col-lg-9">
+                        <h5 className="text-primary-color">FOOD</h5>
                         <h4>A darkling plan</h4>
-                        <h6>By Alexandru Bangau</h6>
+                        <h6 className="text-primary-color">By Alexandru Bangau</h6>
                         <div style={{ justifyContent: 'space-between', display: 'flex' }}>
                             <div>
                                 <h6>June 7, 2020</h6>
                             </div>
                             <div>
-                                <i className="fa fa-eye mr-3"> 56</i>
+                                <i className="fa fa-eye mr-3 text-primary-color"> 56</i>
                                 <i className="fa fa-arrow-alt-circle-up mr-3"> 4</i>
                                 <i className="fa fa-bookmark"></i>
                             </div>
                         </div>
-                        <LOJumbotron
-                            headerText="Food"
-                            footerText="A darkling plain"
-                            footerTextColor={COLORS.primary} />
+                        <LOJumbotron />
                         <p style={{ marginTop: 10 }}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed porro quam ipsam perferendis, omnis architecto fugit alias beatae suscipit odit animi laboriosam, dolorem ipsa autem delectus quos tempora rerum et.</p>
 
                         <div className="tag-container">
@@ -54,7 +51,7 @@ export const ArticleDetailScreen: React.FC<Props> = () => {
                         <div className="card">
                             <div className="card-header d-flex justify-content-between align-items-center">
                                 <h6>4 Comments</h6>
-                                <LOButton title="Post a Comment" style={{ padding: 5, margin: 0, fontSize: 12 }} />
+                                <LOButton title="Post a Comment" style={{ margin: 0 }} />
                             </div>
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">
@@ -70,20 +67,20 @@ export const ArticleDetailScreen: React.FC<Props> = () => {
 
                                 <div style={{padding: 10}}>
                                     <LOTextInput placeholder="Name" type="text" labelColor={COLORS.black} bgColor="rgba(253,96,0,0.2)" />
-                                    <LOTextArea placeholder="Comment" labelColor={COLORS.black} bgColor="rgba(253,96,0,0.2)" />
+                                    <LOTextArea placeholder="Comment" labelTop={true} labelColor={COLORS.black} bgColor="rgba(253,96,0,0.2)" />
 
-                                    <LOButton title="comment" style={{ padding: 5, fontSize: 12 }} />
+                                    <LOButton title="comment" />
                                 </div>
 
                             </ul>
                         </div>
 
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-lg-3">
                         <h5 className="text-center ">Suggested Articles</h5>
                         <LOArticleMiniCard />
                         <LOArticleMiniCard />
-                        <LOArticleMostPopular />
+                        <LOArticleMostPopular showDownload={false} />
                     </div>
                 </div>
             </div>
