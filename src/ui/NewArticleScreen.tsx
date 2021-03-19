@@ -50,7 +50,6 @@ export const NewArticleScreen: React.FC<Props> = () => {
 
                 <div className="row">
                     <div className="col-lg-8">
-                        {/* <input placeholder="Title" className="form-control" /> */}
                         <textarea className="contenu" placeholder="Title" />
 
                         <div className="contentu-container">
@@ -68,9 +67,10 @@ export const NewArticleScreen: React.FC<Props> = () => {
 
                     </div>
                     <div className="col-lg-4">
-                        <h1>Right</h1>
-                        <LODropdownWithIcon icon="fa fa-tag" placeholder="Select Category" />
+                    
+                        <LODropdownWithIcon icon="fa fa-list-alt" placeholder="Select Category" />
                         <LOTextInputWithIcon icon="fa fa-tag" placeholder="Article Tags" />
+                        <small>Seperate tags with a comma</small>
                     </div>
                 </div>
 
