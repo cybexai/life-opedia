@@ -1,5 +1,6 @@
 {
   "name": "life-opedia",
+  "homepage": "https://life-opedia.cybexai.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
