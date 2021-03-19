@@ -11,3 +11,4 @@ export * from './LOCardBodyActions';
 export * from './LOFooter';
 export * from './LOButton';
 export * from './LOTextInputWithIcon';
+export * from './LODropdownWithIcon';

@@ -288,6 +288,10 @@ body {
     margin-right: 5px;
 }
 
+.input-group {
+    margin-bottom: 10px;
+}
+
 .input-group-text {
     background-color: #FD6000;
     border-style: none;

@@ -11,7 +11,7 @@ export const LOTextInputWithIcon: React.FC<Props> = ({ icon, placeholder, ...pro
             <div className="input-group-prepend">
                 <div className="input-group-text" id="btnGroupAddon"> <i className={icon || 'fa fa-user'}></i> </div>
             </div>
-            <input type="text" className="form-control" placeholder={placeholder || 'Placeholder'} aria-label="Input group example" aria-describedby="btnGroupAddon" />
+            <input type="text" className="form-control" {...props} placeholder={placeholder || 'Placeholder'} aria-label="Input group example" aria-describedby="btnGroupAddon" />
         </div>
     )
 }

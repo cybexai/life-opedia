@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
-import { LOButton, LOFooter, LOLargeButton, LONavBar, LOTextInput, LOTextInputWithIcon } from '../components';
+import { LOButton, LODropdownWithIcon, LOFooter, LOLargeButton, LONavBar, LOTextInput, LOTextInputWithIcon } from '../components';
 import { saveArticle, signin } from '../redux/actions';
 import { COLORS } from '../utilities';
 
@@ -46,7 +46,7 @@ export const NewArticleScreen: React.FC<Props> = () => {
         <>
             <LONavBar />
 
-            <div className="container" style={{padding: 20}}>
+            <div className="container" style={{ padding: 20 }}>
 
                 <div className="row">
                     <div className="col-lg-8">
@@ -62,14 +62,15 @@ export const NewArticleScreen: React.FC<Props> = () => {
                             <textarea className="contenu" placeholder="Tell your story" />
 
                         </div>
-                        
-                            <LOButton title="save" />
-                            <LOButton title="publish" />
-                        
+
+                        <LOButton title="save" />
+                        <LOButton title="publish" />
+
                     </div>
                     <div className="col-lg-4">
-                    <h1>Right</h1>
-                    <LOTextInputWithIcon icon="fa fa-tag" placeholder="Article Tags" />
+                        <h1>Right</h1>
+                        <LODropdownWithIcon icon="fa fa-tag" placeholder="Select Category" />
+                        <LOTextInputWithIcon icon="fa fa-tag" placeholder="Article Tags" />
                     </div>
                 </div>
 
