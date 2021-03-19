@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import ReactDropzone from "react-dropzone";
 
-import { LOButton, LODropdownWithIcon, LOFooter, LOLargeButton, LONavBar, LOTextArea, LOTextInput, LOTextInputWithIcon } from '../components';
-import { saveArticle, signin } from '../redux/actions';
+import { LOButton, LODropdownWithIcon, LOFooter, LONavBar, LOTextArea, LOTextInputWithIcon } from '../components';
+import { getCategories, saveArticle } from '../redux/actions';
 import { COLORS } from '../utilities';
+import { RootState } from '../redux';
 
 type Props = {
 
@@ -21,13 +22,30 @@ export const NewArticleScreen: React.FC<Props> = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    useEffect(() => {
+        dispatch(getCategories())
+    }, []);
+
+    const categories = useSelector((state: RootState) => state.appState.categories);
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         switch (e.target.id) {
             case 'titre':
                 setTitre(e.target.value)
                 break;
             case 'contenu':
                 setContenu(e.target.value)
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    const handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        switch (e.target.id) {
+            case 'categorie':
+                setCategorie(e.target.value)
                 break;
             default:
                 break;
@@ -43,16 +61,28 @@ export const NewArticleScreen: React.FC<Props> = () => {
         dispatch(saveArticle(article, history))
     }
 
+    const getImage = async (file: any) => {
+
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (event: any) {
+            setImage(event.target.result)
+            return event.target.result
+        };
+
+    }
+
     return (
         <>
             <LONavBar />
 
-            <div className="container mx-5 px-3 authenticate py-5" style={{ padding: 20 }}>
+            <div className="container px-3 authenticate py-5" >
 
-                <div className="row">
+                <form onSubmit={handleSubmit} className="row">
                     <div className="col-lg-8">
 
-                        <LOTextArea placeholder="Title" labelColor={COLORS.black} />
+                        <LOTextArea placeholder="Title" labelColor={COLORS.black}
+                            type="text" id='titre' onChange={handleInputChange} value={titre} />
 
                         <div className="contentu-container">
 
@@ -60,18 +90,19 @@ export const NewArticleScreen: React.FC<Props> = () => {
                                 <p>Text</p>
                             </div>
 
-                            <LOTextArea placeholder="Tell your story" labelColor={COLORS.black} />
+                            <LOTextArea placeholder="Tell your story" labelColor={COLORS.black}
+                                type="text" id='contenu' onChange={handleInputChange} value={contenu} />
 
                         </div>
 
-                        <LOButton title="save" />
+                        <LOButton title="save" type="submit" />
                         <LOButton title="publish" />
 
                     </div>
                     <div className="col-lg-4">
                         <ReactDropzone
                             accept="image/*"
-                            onDrop={file => console.log(file)}
+                            onDrop={file => getImage(file[0])}
                         >
                             {({ getRootProps, getInputProps }) => (
                                 <section className="image-dropzone">
@@ -82,11 +113,11 @@ export const NewArticleScreen: React.FC<Props> = () => {
                                 </section>
                             )}
                         </ReactDropzone>
-                        <LODropdownWithIcon icon="fa fa-list-alt" placeholder="Select Category" />
+                        <LODropdownWithIcon data={categories} id='categorie' onChange={handleDropdownChange} value={_categorie} icon="fa fa-list-alt" placeholder="Select Category" />
                         <LOTextInputWithIcon icon="fa fa-tag" placeholder="Article Tags" />
                         <small>Seperate tags with a comma</small>
                     </div>
-                </div>
+                </form>
 
             </div>
 

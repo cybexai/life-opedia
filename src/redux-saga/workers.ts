@@ -36,11 +36,12 @@ export function* getArticleWorker() {
 
 export function* saveArticleWorker(payload: any) {
     try {
-        const response: AxiosResponse = yield call(AdminApi.saveArticle, payload.anneeScholaire);
+        const response: AxiosResponse = yield call(AdminApi.saveArticle, payload.article);
 
         if (response.status === 201) {
             alert('Enregistré avec succès')
             yield put(ACTIONS.getArticles());
+            payload.history.push('/homepage');
         } else {
             alert('Une erreur est survenue')
         }
