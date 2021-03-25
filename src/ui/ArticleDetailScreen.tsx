@@ -85,7 +85,7 @@ export const ArticleDetailScreen: React.FC<Props> = () => {
                         <h5 className="text-center ">Suggested Articles</h5>
                         <LOArticleMiniCard />
                         <LOArticleMiniCard />
-                        <LOArticleMostPopular showDownload={false} />
+                        <LOArticleMostPopular showDownload={false} headerBackground={COLORS.floralwhite} topTitle="Food" />
                     </div>
                 </div>
             </div> : null }

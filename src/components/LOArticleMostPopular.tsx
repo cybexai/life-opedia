@@ -5,14 +5,16 @@ import { LOCardBodyActions } from './LOCardBodyActions';
 
 interface Props {
     showDownload: boolean,
-    headerBackground?: string
+    headerBackground?: string,
+    topTitle?: string
 }
 
-export const LOArticleMostPopular: React.FC<Props> = ({ showDownload, headerBackground }) => {
+export const LOArticleMostPopular: React.FC<Props> = ({ showDownload, headerBackground, topTitle }) => {
 
     return (
         <div className="card">
-            <div className="card-header text-center" style={{backgroundColor: headerBackground || COLORS.whitesmoke}}>
+            <div className="card-header text-center" style={{ backgroundColor: headerBackground || COLORS.whitesmoke }}>
+                {topTitle && <h4 className="text-primary-color">{topTitle}</h4>}
                 Most Popular
             </div>
             <ul className="list-group list-group-flush">
