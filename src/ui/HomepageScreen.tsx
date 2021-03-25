@@ -34,7 +34,7 @@ export const HomepageScreen: React.FC<Props> = () => {
     return (
         <>
             <LONavBar />
-            {console.log(categories)}
+            
             <LOJumbotron
                 headerText="Food"
                 footerText="A darkling plain"
@@ -55,7 +55,7 @@ export const HomepageScreen: React.FC<Props> = () => {
                     <h5 className="text-center ">Suggested Articles</h5>
                     <LOArticleMiniCard />
                     <LOArticleMiniCard />
-                    <LOArticleMostPopular showDownload />
+                    <LOArticleMostPopular showDownload headerBackground={COLORS.floralwhite} />
                 </div>
             </div>
 

@@ -1,4 +1,5 @@
 import React, { ButtonHTMLAttributes } from 'react';
+
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     title: string,  
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
-import { LOLargeButton, LONavBar, LOTextInput } from '../components';
+import { LOCheckbox, LOLargeButton, LONavBar, LOTextInput } from '../components';
 import { signin } from '../redux/actions';
 import { COLORS } from '../utilities';
 
@@ -56,16 +56,16 @@ export const SigninScreen: React.FC<Props> = () => {
 
                                 <LOTextInput placeholder="USERNAME" type="text" id='nom' onChange={handleInputChange} value={nom} required />
 
-                                <label className="remember_me_label">
-                                    <input type="checkbox" className="remember_me_checkbox" checked />Keep me Signed in
-                                <span className="checkmark"></span> </label>
+                                <LOCheckbox title="Keep me Signed in" checked />
 
                                 <LOLargeButton type="submit" title="LOG IN" backgroundColor={COLORS.primary} borderRadius={20} />
 
                                 <hr className="bg-white my-5 d-none d-lg-block" style={{ opacity: 0.2 }} />
-                                
-                                    <a href="#" className="text-center">Want to be a member</a>
-                                
+
+                                <div className="text-center">
+                                    <a href="#" >Want to be a member</a>
+                                </div>
+
                             </div>
 
                         </div>

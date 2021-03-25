@@ -12,5 +12,6 @@ export const COLORS = {
     linkedin: '#0083A8',
     twitter: '#46C0FB',
     dimgray: '#706262',
-    floralwhite: '#FBF9F4'
+    floralwhite: '#FBF9F4',
+    whitesmoke: '#F7F7F7'
 }
