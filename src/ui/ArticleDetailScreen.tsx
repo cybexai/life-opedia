@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { getArticleById } from '../api';
 
-import { LOArticleMiniCard, LOArticleMostPopular, LOButton, LOFooter, LOJumbotron, LONavBar, LOTextArea, LOTextInput } from '../components';
+import { LOArticleMiniCard, LOArticleMostPopular, LOButton, LOFooter, LOJumbotron, LOListItem, LONavBar, LOTextArea, LOTextInput } from '../components';
 import { COLORS } from '../utilities';
 
 type Props = {
@@ -42,7 +42,7 @@ export const ArticleDetailScreen: React.FC<Props> = () => {
                                 <i className="fa fa-bookmark"></i>
                             </div>
                         </div>
-                        <LOJumbotron style={{backgroundImage:`url(${article.image})`}} />
+                        <LOJumbotron style={{ backgroundImage: `url(${article.image})` }} />
                         <p style={{ marginTop: 10 }}>{article.contenu}</p>
 
                         <div className="tag-container">
@@ -59,18 +59,20 @@ export const ArticleDetailScreen: React.FC<Props> = () => {
                                 <LOButton title="Post a Comment" style={{ margin: 0 }} />
                             </div>
                             <ul className="list-group list-group-flush">
-                                <li className="list-group-item">
-                                    <h6>MARKETTA BLOCK SAYS...</h6>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, in veritatis minus itaque quos cupiditate amet quis vitae labore modi obcaecati quasi architecto magni ipsum atque velit temporibus. Error, quibusdam.</p>
-                                    <small>JUNE 07 2020</small>
-                                </li>
-                                <li className="list-group-item">
-                                    <h6>MARKETTA BLOCK SAYS...</h6>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, in veritatis minus itaque quos cupiditate amet quis vitae labore modi obcaecati quasi architecto magni ipsum atque velit temporibus. Error, quibusdam.</p>
-                                    <small>JUNE 07 2020</small>
-                                </li>
-
-                                <div style={{ padding: 10 }}>
+                                <LOListItem title="MARKETTA BLOCK SAYS..."
+                                    date="JUNE 07 2020"
+                                    body={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, in veritatis minus itaque quos cupiditate amet quis vitae labore modi obcaecati quasi architecto magni ipsum atque velit temporibus.`} />
+                                <LOListItem title="JOE DARCIN SAYS..."
+                                    date="AUGUST 18 2020"
+                                    body={`I have to say that this is the best article i have never seen.`} />
+                                <LOListItem title="ALEX SAYS..."
+                                    date="OCTOBER 28 2020"
+                                    body={`thank you Darcin`} />
+                                <LOListItem title="BEE SAYS..."
+                                    date="OCTOBER 28 2020"
+                                    body={`Nice`} hideDivider />
+        
+                                <div className="comment-input-ctn">
                                     <LOTextInput placeholder="Name" type="text" labelColor={COLORS.black} bgColor="rgba(253,96,0,0.2)" />
                                     <LOTextArea placeholder="Comment" labelTop={true} labelColor={COLORS.black} bgColor="rgba(253,96,0,0.2)" />
 
@@ -88,7 +90,7 @@ export const ArticleDetailScreen: React.FC<Props> = () => {
                         <LOArticleMostPopular showDownload={false} headerBackground={COLORS.floralwhite} topTitle="Food" />
                     </div>
                 </div>
-            </div> : null }
+            </div> : null}
 
             <LOFooter />
 

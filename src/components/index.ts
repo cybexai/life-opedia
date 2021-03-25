@@ -14,3 +14,4 @@ export * from './LOTextInputWithIcon';
 export * from './LODropdownWithIcon';
 export * from './LOTextArea';
 export * from './LOCheckbox';
+export * from './LOListItem';
