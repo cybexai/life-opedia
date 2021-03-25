@@ -329,6 +329,10 @@ body {
     font-size: 12px;
 }
 
+.footer-center .copyright {
+    color: #FD6000;
+}
+
 .footer-right {
     display: flex;
     text-align: center;

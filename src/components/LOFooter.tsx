@@ -13,7 +13,7 @@ export const LOFooter: React.FC<Props> = ({ ...props }) => {
 
             <div className="footer-center">
                 <a href="#">Privacy Policy Terms &amp; Conditions</a>
-                <a href="#">Copyright &copy; 2020. All rights reserved.</a>
+                <a href="#" className="copyright">Copyright &copy; 2020. All rights reserved.</a>
             </div>
 
             <div className="footer-right">
