@@ -34,7 +34,7 @@ export const HomepageScreen: React.FC<Props> = () => {
     return (
         <>
             <LONavBar />
-            {console.log(categories)}
+            
             <LOJumbotron
                 headerText="Food"
                 footerText="A darkling plain"

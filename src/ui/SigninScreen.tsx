@@ -61,9 +61,11 @@ export const SigninScreen: React.FC<Props> = () => {
                                 <LOLargeButton type="submit" title="LOG IN" backgroundColor={COLORS.primary} borderRadius={20} />
 
                                 <hr className="bg-white my-5 d-none d-lg-block" style={{ opacity: 0.2 }} />
-                                
-                                    <a href="#" className="text-center">Want to be a member</a>
-                                
+
+                                <div className="text-center">
+                                    <a href="#" >Want to be a member</a>
+                                </div>
+
                             </div>
 
                         </div>
