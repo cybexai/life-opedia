@@ -1,19 +1,18 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 
+import { COLORS } from '../utilities';
 import { LOCardBodyActions } from './LOCardBodyActions';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
-    image?: string,
-    contenu?: string,
-    titre?: string,
-    showDownload: boolean
+interface Props {
+    showDownload: boolean,
+    headerBackground?: string
 }
 
-export const LOArticleMostPopular: React.FC<Props> = ({ showDownload,...props }) => {
+export const LOArticleMostPopular: React.FC<Props> = ({ showDownload, headerBackground }) => {
 
     return (
         <div className="card">
-            <div className="card-header text-center">
+            <div className="card-header text-center" style={{backgroundColor: headerBackground || COLORS.whitesmoke}}>
                 Most Popular
             </div>
             <ul className="list-group list-group-flush">

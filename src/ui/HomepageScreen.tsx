@@ -55,7 +55,7 @@ export const HomepageScreen: React.FC<Props> = () => {
                     <h5 className="text-center ">Suggested Articles</h5>
                     <LOArticleMiniCard />
                     <LOArticleMiniCard />
-                    <LOArticleMostPopular showDownload />
+                    <LOArticleMostPopular showDownload headerBackground={COLORS.floralwhite} />
                 </div>
             </div>
 
