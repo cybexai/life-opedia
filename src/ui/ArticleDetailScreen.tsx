@@ -37,9 +37,9 @@ export const ArticleDetailScreen: React.FC<Props> = () => {
                                 <h6>June 7, 2020</h6>
                             </div>
                             <div>
-                                <i className="fa fa-eye mr-3 text-primary-color"> 56</i>
-                                <i className="fa fa-arrow-alt-circle-up mr-3"> 4</i>
-                                <i className="fa fa-bookmark"></i>
+                                <span><i className="fa fa-eye text-primary-color"></i> 56</span>
+                                <span><i className="fa fa-arrow-alt-circle-up ml-3"></i> 4</span>
+                                <i className="fa fa-bookmark ml-3"></i>
                             </div>
                         </div>
                         <LOJumbotron style={{ backgroundImage: `url(${article.image})` }} />
